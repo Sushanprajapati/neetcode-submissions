@@ -1,0 +1,13 @@
+class Solution {
+    public int[] countBits(int n) {
+        int[] tempArray = new int[n + 1];
+        int offset = 1;
+
+        for (int i = 1; i <= n; i++) {
+            if (2 * offset == i) offset = i;
+            tempArray[i] = 1 + tempArray[i - offset];
+        } 
+
+        return tempArray;
+    }
+}
